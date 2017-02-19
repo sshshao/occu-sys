@@ -1,5 +1,4 @@
 var dict = {};
-var dict2 = {};
 
 function Space(location) {
     this.location = location;
@@ -82,14 +81,13 @@ function updateList(location, data) {
     if (!(location in dict)) {
         var space = new Space(location);
         dict[location] = space;
-        dict2[location] = space;
     }
     dict[location].spots++;
     if(data.status == 0) {
         dict[location].avaliable += 1;
     }
-    dict2[location].lat = data.lat;
-    dict2[location].lng = data.lng;
+    dict[location].lat = data.lat;
+    dict[location].lng = data.lng;
 }
 
 
@@ -100,20 +98,31 @@ function initMap() {
       mapTypeId: 'roadmap',
     });
     
-    for(var s2 in dict2) {
-        var mpos = {lat: dict2[s2].lat, lng: dict2[s2].lng};
-        var marker = new google.maps.Marker({
-          position: mpos,
-          map: map
-        });
-        
-        marker.addListener('click', function() {
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
-                                  'Place ID: ' + place.place_id + '<br>' +
-                                  place.formatted_address + '</div>');
-            infowindow.open(map, this);
-        });
-    }
+    var mpos = {lat: 40.902075, lng: -73.134234};
+    var marker = new google.maps.Marker({
+      position: mpos,
+      map: map
+    });
+
+    marker.addListener('click', function() {
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
+                              'Place ID: ' + place.place_id + '<br>' +
+                              place.formatted_address + '</div>');
+        infowindow.open(map, this);
+    });
+    
+    mpos = {lat: 40.903972, lng: -73.134724};
+    marker = new google.maps.Marker({
+      position: mpos,
+      map: map
+    });
+
+    marker.addListener('click', function() {
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 
+                              'Place ID: ' + place.place_id + '<br>' +
+                              place.formatted_address + '</div>');
+        infowindow.open(map, this);
+    });
     
     //set current position as center
     if(navigator.geolocation) {

@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script src="occuweb.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxh8XfKmMpdn9kPczyaAHoHOJtq42mCK8&callback=initMap" async defer></script>
+    
+    <title>Get Released</title>
+</head>
+
+<body class="w3-content" style="max-width:1500px">
+    <div class="w3-row">
+        <div class="w3-half w3-light-grey w3-container w3-center" style="height:800px">
+            <div class="w3-padding-64">
+                <h1>ToiletGo</h1>
+                <h3>Find the Spot Avaliable</h3>
+                <table id="spot-list"></table>
+            </div>
+        </div>
+        <div class="w3-half w3-blue-grey w3-container" style="height:800px">
+            <div class="w3-padding-64 w3-center">
+              <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</body>

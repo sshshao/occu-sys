@@ -1,8 +1,8 @@
 #map {
-    height: 90%;
-    width: 70%;
+    height: 1200;
+    width: 780;
     align-self: center;
-    padding: 30;
+    margin-left: 30;
 }
 
 table {
